@@ -21,8 +21,8 @@ Fog Bound is a simple project of mine that I do not know if it will develop, mad
 
 1. **Download the Beta:**
    - [Windows](https://github.com/GuestAUser/fogBound/releases/tag/Windows)
-   - [macOS (CURRENTLY NOT AVAILABLE)]()
    - [Linux](https://github.com/GuestAUser/fogBound/releases/tag/Linux)
+   - [macOS (CURRENTLY NOT AVAILABLE)]()
 
 ---
 
