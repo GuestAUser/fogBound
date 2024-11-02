@@ -12,7 +12,7 @@
 
 ## 🎮 About Fog Bound
 
-Fog Bound is a simple project of mine that I do not know if it will develop, made enterly in c, and very lightweight so it should run on about any configuration of at least the last 12 years I presume.
+Fog Bound is a simple project of mine that I do not know if it will develop, made entirely in c, and very lightweight so it should run on about any configuration of at least the last 12 years I presume.
 
 ---
 
