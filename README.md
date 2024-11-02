@@ -17,7 +17,7 @@ Fog Bound is a simple project of mine that I do not know if it will develop, mad
 ---
 
 
-## 🛠️ How to Participate
+## 🛠️ Downloads
 
 1. **Download the Beta:**
    - [Windows](https://github.com/GuestAUser/fogBound/tree/main/FogBoundClosedBeta/fogBoundWindows)
