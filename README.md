@@ -20,10 +20,10 @@ Fog Bound is a simple project of mine that I do not know if it will develop, mad
 ## 🛠️ Downloads
 
 1. **Download the Beta:**
-   - [Windows](https://github.com/GuestAUser/fogBound/releases/tag/Windows)
    - [Linux](https://github.com/GuestAUser/fogBound/releases/tag/Linux)
+   - [Windows](https://github.com/GuestAUser/fogBound/releases/tag/Windows)
    - [macOS (CURRENTLY NOT AVAILABLE)]()
-
+     
 ---
 
 ## 📅 Roadmap
