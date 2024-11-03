@@ -18,12 +18,9 @@ void main()
     vec2 pixelPos = fragTexCoord * screenSize;
     float distance = length(pixelPos - lightPos);
 
-    // Soft spotlight effect with smoother edges
     float intensity = clamp(1.0 - (distance / lightRadius), 0.0, 1.0);
 
-    // Apply a quadratic falloff for smoother light dissipation
     intensity = pow(intensity, 2.0);
 
-    // Adjust the final color by blending with the texture color
     finalColor = texColor * vec4(vec3(intensity), 1.0);
 }
