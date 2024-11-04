@@ -284,8 +284,7 @@ void UpdTCd() {
     float dTm = GetFrameTime();
     for (int i = 0; i < MAX_CLDS; i++) {
         clds[i].position.x -= clds[i].s * dTm * 60.0f;
-        if (clds[i].position.x < -cRects[clds[i].frameIndex].width *
-            0.25f) {
+        if (clds[i].position.x < -cRects[clds[i].frameIndex].width * 0.25f) {
             clds[i].position.x = wWidth + GetRandomValue(0, 200);
             int attempts = 0;
             float distance;
@@ -311,15 +310,15 @@ void DrawCd(Cloud cloud) {
     lumni0Fac = Clamp(lumni0Fac, 0.0f, 1.0f);
     lumni0Fac = powf(lumni0Fac, 1.5f);
 
-    Color blendedFogColor = fColor;
-    blendedFogColor.a = (unsigned char)(fColor.a * lumni0Fac);
+    Color bFC = fColor;
+    bFC.a = (unsigned char)(fColor.a * lumni0Fac);
 
     Rectangle frame = cRects[cloud.frameIndex];
     float scale = 0.25f;
     DrawTexturePro(cTx, frame,
         (Rectangle){ cloud.position.x, cloud.position.y,
                      frame.width * scale, frame.height * scale },
-        (Vector2){ 0, 0 }, 0.0f, blendedFogColor);
+        (Vector2){ 0, 0 }, 0.0f, bFC);
 }
 
 void InitFP() {
@@ -356,14 +355,14 @@ void DrawFP() {
         float distance = Vector2Distance(fgParticle[i].position,
                                          pPos);
         float maxDistance = 500.0f;
-        float alphaFactor = 1.0f - (distance / maxDistance);
-        alphaFactor = Clamp(alphaFactor, 0.0f, 1.0f);
-        alphaFactor *= fgParticle[i].alpha;
+        float alphaFt = 1.0f - (distance / maxDistance);
+        alphaFt = Clamp(alphaFt, 0.0f, 1.0f);
+        alphaFt *= fgParticle[i].alpha;
 
-        Color color = WHITE;
-        color.a = (unsigned char)(255 * alphaFactor * 0.5f);
+        Color cW = WHITE;
+        cW.a = (unsigned char)(255 * alphaFt * 0.5f);
 
-        DrawCircleV(fgParticle[i].position, fgParticle[i].size, color);
+        DrawCircleV(fgParticle[i].position, fgParticle[i].size, cW);
     }
 }
 
@@ -430,8 +429,8 @@ void DrawGame() {
     
     DrawRn();
     
-    float time = GetTime();
-    float floatOffset = sinf(time * 2.0f) * 5.0f;
+    float t = GetTime();
+    float floatOffset = sinf(t * 2.0f) * 5.0f;
     Vector2 floatingHousePos = (Vector2){
         hPos.x, hPos.y + floatOffset };
 
