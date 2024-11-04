@@ -6,7 +6,7 @@
 
 ## 🚀 Current Status
 
-**Open Beta Since:** February 11, 2024
+**Open Beta Since:** November 2, 2024
 
 ---
 
