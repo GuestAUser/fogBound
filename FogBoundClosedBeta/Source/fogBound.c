@@ -70,20 +70,20 @@ typedef struct Rdp {
     float spd;
 } Rdp;
 
-typedef struct Cloud {
+typedef struct Cld {
     Vector2 position;
     float s;
     bool isForeground;
     int frameIndex;
-} Cloud;
+} Cld;
 
-typedef struct FogParticle {
+typedef struct FgPrtcle {
     Vector2 position;
     float spD;
     float size;
     float alpha;
     float offset; 
-} FogParticle;
+} FgPrtcle;
 
 typedef enum {
     GAME_STATE_MENU,
@@ -92,9 +92,9 @@ typedef enum {
     GAME_STATE_EXIT
 } GameState;
 
-Rdp raindrops[MAX_RPS];
-Cloud clds[MAX_CLDS];
-FogParticle fgParticle[MX_FG_PRTCLS];
+Rdp rainElement[MAX_RPS];
+Cld clds[MAX_CLDS];
+FgPrtcle fgParticle[MX_FG_PRTCLS];
 Rectangle cRects[CLOUD_FRMS];
 
 Texture2D pW;
@@ -125,7 +125,7 @@ void UpdateRn();
 void DrawRn();
 void InitCd();
 void UpdTCd();
-void DrawCd(Cloud cloud);
+void DrawCd(Cld cloud);
 void InitFP();
 void UpdateFP();
 void DrawFP();
@@ -232,31 +232,31 @@ int main()
 
 void InitRn() {
     for (int i = 0; i < MAX_RPS; i++) {
-        raindrops[i].position = (Vector2){
+        rainElement[i].position = (Vector2){
             GetRandomValue(0, (int)wWidth),
             GetRandomValue(-200, (int)wHeight) };
-        raindrops[i].spd = GetRandomValue(200, 500) / 100.0f;
+        rainElement[i].spd = GetRandomValue(200, 500) / 100.0f;
     }
 }
 
 void UpdateRn() {
     float dTm = GetFrameTime();
     for (int i = 0; i < MAX_RPS; i++) {
-        raindrops[i].position.y += raindrops[i].spd * dTm * 60.0f;
-        if (raindrops[i].position.y > wHeight) {
-            raindrops[i].position = (Vector2){
+        rainElement[i].position.y += rainElement[i].spd * dTm * 60.0f;
+        if (rainElement[i].position.y > wHeight) {
+            rainElement[i].position = (Vector2){
                 GetRandomValue(0, (int)wWidth),
                 GetRandomValue(-200, 0) };
-            raindrops[i].spd = GetRandomValue(200, 500) / 100.0f;
+            rainElement[i].spd = GetRandomValue(200, 500) / 100.0f;
         }
     }
 }
 
 void DrawRn() {
     for (int i = 0; i < MAX_RPS; i++) {
-        DrawLineEx(raindrops[i].position,
-                   (Vector2){ raindrops[i].position.x,
-                              raindrops[i].position.y + 10 },
+        DrawLineEx(rainElement[i].position,
+                   (Vector2){ rainElement[i].position.x,
+                              rainElement[i].position.y + 10 },
                    1.0f, LIGHTGRAY);
     }
 }
@@ -302,7 +302,7 @@ void UpdTCd() {
     }
 }
 
-void DrawCd(Cloud cloud) {
+void DrawCd(Cld cloud) {
     float d = Vector2Distance(cloud.position, pPos);
     float mD = 600.0f;
 
