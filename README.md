@@ -38,7 +38,7 @@ Fog Bound is a simple project of mine that I do not know if it will develop, mad
 
 ## 📹 Showcase
 
-[ShowCase](https://youtu.be/qvirdTep3DM)
+[![ShowCase](https://img.youtube.com/vi/qvirdTep3DM/0.jpg)](https://youtu.be/qvirdTep3DM)
 
 
 ## 📜 License
