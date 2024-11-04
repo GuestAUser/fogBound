@@ -174,7 +174,7 @@ int main()
     InitCd();
     InitFP();
 
-    cM.offset = (Vector2){ sWidth / 2.0f, screenHeight / 2.0f };
+    cM.offset = (Vector2){ sWidth / 2.0f, sHeight / 2.0f };
     cM.target = pPos;
     cM.rotation = 0.0f;
     cM.zoom = 1.0f;
